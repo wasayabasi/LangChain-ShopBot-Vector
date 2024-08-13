@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 # Load environment variables from a .env file
 load_dotenv()
 
-# Pinecone configurationc
+# Pinecone configuration
 api_key = os.getenv("PINECONE_API_KEY")
 pc = Pinecone(api_key=api_key)
 
@@ -26,7 +26,7 @@ myindex = pc.Index(index_name)
 time.sleep(1)
 
 # Set the Google API key
-os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
+google_api_key = os.getenv("GOOGLE_API_KEY")
 
 # Initialize embeddings and vector store
 embed_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
