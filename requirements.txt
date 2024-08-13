@@ -1,0 +1,8 @@
+python-dotenv
+mysql-connector-python
+pandas
+pinecone
+langchain-google-genai
+ipywidgets
+langchain-pinecone
+streamlit
