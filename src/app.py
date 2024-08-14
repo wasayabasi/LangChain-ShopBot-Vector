@@ -49,6 +49,7 @@ system_message = (
 )
 
 # Function to generate a response from Google Gemini
+# Function to generate a response from Google Gemini
 def generate_answer(system_message, chat_history, prompt):
     genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
     model = genai.GenerativeModel('gemini-pro')
@@ -58,6 +59,9 @@ def generate_answer(system_message, chat_history, prompt):
 
     # Combine the system message with the chat history
     full_prompt = f"{system_message}\n\n" + "\n".join(chat_history) + "\nAssistant:"
+    
+    # Instruct the model to generate a detailed and comprehensive response
+    full_prompt += "\n\nPlease provide a detailed and comprehensive answer with additional relevant information."
 
     # Generate the response and add it to the chat history
     response = model.generate_content(full_prompt).text
